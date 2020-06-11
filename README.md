@@ -145,23 +145,23 @@ $ python3 snoop.py --update y
 `` ``
 
 ## Major errors
-
-| Party | Problem | Solution |
-|: ---------: | -------------------------------------------------- ---- |: -------: |
-| ========= | ========================================= ================ | ======= |
-| Client | Connection Blocking by Proactive Defense (* Kaspersky) | 1 |
-| | Insufficient Internet connection speed EDGE / 3G | 2 |
-| | Too low value of option '-t' | 2 |
-| | invalid username | 3 |
-| | Errors: [GipsysTeam; RamblerDating; Mamochki] | 7 |
-| ========= | ========================================= ================ | ======= |
-| Provider | Internet Censorship | 4 |
-| ========= | ========================================= ================ | ======= |
-| Server | Site changed its response / API; updated CF / WAF | 5 |
-| | Server blocking the range of client IP addresses | 4 |
-| | Activation / protection of the resource captch | 4 |
-| | Some sites are temporarily unavailable, technical work | 6 |
-| ========= | ========================================= ================ | ======= |
+|===========|============================================================|=========|
+|    Party  |     Problem                                                | Solution|
+|-----------|------------------------------------------------------------|---------|
+| ========= | ===========================================================|=========|
+|   Client  | Connection Blocking by Proactive Defense (* Kaspersky)     |    1    |
+|           | Insufficient Internet connection speed EDGE / 3G           |    2    |
+|           | Too low value of option '-t'                               |    2    |
+|           | invalid username                                           |    3    |
+|           | Errors: [GipsysTeam; RamblerDating; Mamochki]              |    7    |
+| ========= | ===========================================================| ======= |
+| Provider  | Internet Censorship                                        |    4    |
+| ========= | ===========================================================| ======= |
+|  Server   | Site changed its response / API; updated CF / WAF          |    5    |
+|           | Server blocking the range of client IP addresses           |    4    |
+|           | Activation / protection of the resource captch             |    4    |
+|           | Some sites are temporarily unavailable, technical work     |    6    |
+| ========= | ===========================================================| ======= |
 
 Solutions:
 1. Reconfigure your Firewall (for example, Kaspersky blocks Adult Resources).
