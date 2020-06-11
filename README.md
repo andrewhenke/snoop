@@ -64,7 +64,7 @@ $ git config --global user.name "username"
 $ pkg install coreutils
 `` ``
 ## Using
-`` ``
+```bash
 $ python3 snoop.py --help
 
 usage: snoop.py [-h] [--donate y] [--version] [--verbose] [--base]
@@ -105,30 +105,30 @@ optional arguments:
                         ✓ Disable printing of country flags ✓ Disable
                         indication and status of progress
   --update y Update Snoop source code
-`` ``
+```
 
 ** Example **
 `` ``
 # To search for only one user:
-$ python3 snoop.py username1
+`$ python3 snoop.py username1`
 # Or, for example, Cyrillic is supported:
-$ python3 snoop.py olesya
+`$ python3 snoop.py olesya`
 # To search for a name containing a space:
-$ python3 snoop.py "ivan ivanov"
-$ python3 snoop.py ivan_ivanov
-$ python3 snoop.py ivan-ivanov
+`$ python3 snoop.py "ivan ivanov"`
+`$ python3 snoop.py ivan_ivanov`
+`$ python3 snoop.py ivan-ivanov`
 
 # Launch on Windows OS:
-$ python snoop.py username1
+`$ python snoop.py username1`
 
 # To search for one or more users:
-$ python3 snoop.py username1 username2 username3 username4
+`$ python3 snoop.py username1 username2 username3 username4`
 
 # Search for many users - sorting output by country;
 # Avoiding freezes on sites (more often the 'dead zone' depends on your ip-address);
 # print only found accounts; save pages found
 # accounts locally; specify a file with a list of wanted accounts:
-$ python3 snoop.py -c -t 13 -f -S -u ~ / file.txt start
+`$ python3 snoop.py -c -t 13 -f -S -u ~ / file.txt start`
 
 # 'ctrl-c / z' - abort the search
 `` ``
@@ -140,28 +140,27 @@ Destroy ** all ** search results - delete the directory '~ / snoop / results'.
 
 `` ``
 #Update Snoop to test new features in the software:
-$ python3 snoop.py --update y
+`$ python3 snoop.py --update y`
 [^ 1]: Requires Git installation.
 `` ``
 
 ## Major errors
-|===========|============================================================|=========|
-|    Party  |     Problem                                                | Solution|
-|-----------|------------------------------------------------------------|---------|
-| ========= | ===========================================================|=========|
-|   Client  | Connection Blocking by Proactive Defense (* Kaspersky)     |    1    |
-|           | Insufficient Internet connection speed EDGE / 3G           |    2    |
-|           | Too low value of option '-t'                               |    2    |
-|           | invalid username                                           |    3    |
-|           | Errors: [GipsysTeam; RamblerDating; Mamochki]              |    7    |
-| ========= | ===========================================================| ======= |
-| Provider  | Internet Censorship                                        |    4    |
-| ========= | ===========================================================| ======= |
-|  Server   | Site changed its response / API; updated CF / WAF          |    5    |
-|           | Server blocking the range of client IP addresses           |    4    |
-|           | Activation / protection of the resource captch             |    4    |
-|           | Some sites are temporarily unavailable, technical work     |    6    |
-| ========= | ===========================================================| ======= |
+|  Party  |     Problem                                             | Solution|
+|---------|---------------------------------------------------------|---------|
+|=========| ========================================================|=========|
+|  Client | Connection Blocking by Proactive Defense (* Kaspersky)  |    1    |
+|         | Insufficient Internet connection speed EDGE / 3G        |    2    |
+|         | Too low value of option '-t'                            |    2    |
+|         | invalid username                                        |    3    |
+|         | Errors: [GipsysTeam; RamblerDating; Mamochki]           |    7    |
+|=========| ========================================================| ======= |
+| Provider| Internet Censorship                                     |    4    |
+|=========|=========================================================| ======= |
+|Server   | Site changed its response / API; updated CF / WAF       |    5    |
+|         | Server blocking the range of client IP addresses        |    4    |
+|         | Activation / protection of the resource captch          |    4    |
+|         | Some sites are temporarily unavailable, technical work  |    6    |
+|=========| ========================================================| ======= |
 
 Solutions:
 1. Reconfigure your Firewall (for example, Kaspersky blocks Adult Resources).
