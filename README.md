@@ -1,12 +1,12 @@
 
-| Platform | Support |
-| ----------------------- |: ---------: |
-| GNU / Linux | ✅ |
-| Windows 7/10 (32/64) | ✅ |
-| Android / Termux / Andrax | ✅ |
-| macOS | ❗️ |
-| IOS | 🚫 |
-| WSL | ❗️ |
+| Platform                    |  Support  |
+| --------------------------- |:---------:|
+| GNU / Linux                 |    ✅    |
+| Windows 7/10 (32/64)        |    ✅    |
+| Android / Termux / Andrax   |    ✅    |
+| macOS                       |     ❗️     |
+| WSL                         |     ❗️     |
+| IOS                         |    🚫    |
 
 
 ** Native Installation **
