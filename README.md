@@ -1,89 +1,70 @@
-Snoop Project
-============
 
-## Snoop Project один из самых перспективных OSINT-инструментов по поиску никнеймов.
-- [X] This is the most powerful software taking into account the CIS location.
+| Platform | Support |
+| ----------------------- |: ---------: |
+| GNU / Linux | ✅ |
+| Windows 7/10 (32/64) | ✅ |
+| Android / Termux / Andrax | ✅ |
+| macOS | ❗️ |
+| IOS | 🚫 |
+| WSL | ❗️ |
 
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop.png" />
 
-Snoop project is developed without taking into account the opinions of the NSA and their friends,  
-that is, it is available to the average user.
+** Native Installation **
+Note: The required version of python is 3.7 and higher.
 
-History
-https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
-
-| Платформа             | Поддержка |
-|-----------------------|:---------:|
-| GNU/Linux             |     ✅    |
-| Windows 7/10 (32/64)  |     ✅    |
-| Android/Termux/Andrax |     ✅    |
-| macOS                 |     ❗️    |
-| IOS                   |     🚫    |
-| WSL                   |     ❗️    |
-
-[Snoop Full version database 1.1k_websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
-
-## Snoop for OS Windows and GNU/Linux  
-**Release**  
-snoop.exe and snoop
-https://github.com/snooppr/snoop/releases
-
-**Native Installation**  
-Примечание: Требуемая версия python 3.7 и выше.
-
-```
-# Клонировать репозиторий
+`` ``
+# Clone repository
 $ git clone https://github.com/snooppr/snoop
 
-# Войти в рабочий каталог
-$ cd ~/snoop
+# Enter the working directory
+$ cd ~ / snoop
 
-# Установить python3 и python3-pip, если они не установлены
+# Install python3 and python3-pip if they are not installed
 $ apt-get update && apt-get install python3
 
-# Установить зависимости 'requirements'
+# Install dependencies 'requirements'
 $ pip install --upgrade pip
 $ python3 -m pip install -r requirements.txt
-# Либо установить все зависимости из 'requirements.txt' в ручную через
+# Either install all the dependencies from 'requirements.txt' manually through
 $ pip3 install module
-# Если вместо флагов стран отображаются спецсимволы, доставить пакет шрифта, например монохромный
-$ apt-get install ttf-ancient-fonts или цветной apt-get install fonts-noto-color-emoji
-```
+# If special characters are displayed instead of country flags, deliver a font package, for example, monochrome
+$ apt-get install ttf-ancient-fonts or color apt-get install fonts-noto-color-emoji
+`` ``
 ## Snoop for Android
-**Native Installation**  
+** Native Installation **
 
-Установить [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=en "Google Play")  
-```
-# Войти в домашнюю папку Termux (т.е. просто открыть Termux)
+Install [Termux] (https://play.google.com/store/apps/details?id=com.termux&hl=en "Google Play")
+`` ``
+# Enter the Termux home folder (i.e. just open Termux)
 $ termux-setup-storage
-$ ls #/data/data/com.termux/files/home дефолтный/домашний каталог
+$ ls # / data / data / com.termux / files / home default / home directory
 
-# Установить python3 и зависимости
-# Примечание: установка продолжительная по времени
+# Install python3 and dependencies
+# Note: long time installation
 $ apt update && pkg upgrade && pkg install python libcrypt libxml2 libxslt git
 $ pip install --upgrade pip
 
-# Клонировать репозиторий
+# Clone repository
 $ git clone https://github.com/snooppr/snoop
-# (Если флешкa FAT (ни ext4), в таком случае,
-# клонировать репозиторий только в ДОМАШНЮЮ директорию Termux)
+# (If the flash drive is FAT (nor ext4), in this case,
+# clone the repository only in the TERMux HOME directory)
 
-# Войти в рабочий каталог Snoop
-$ cd ~/snoop
-# Установить зависимости 'requirements'
+# Enter the Snoop working directory
+$ cd ~ / snoop
+# Install dependencies 'requirements'
 $ python3 -m pip install -r requirements.txt
 
 
-# Дополнение для устаревших гаджетов (Android 6)
-# Примечание на современных гаджетах пакеты уже предустановлены и настроены
-# добавьте любое 'рандомное' имя и почту [^1]:
+Addition for obsolete gadgets (Android 6)
+# Note on modern gadgets packages are already preinstalled and configured
+# add any 'random' name and mail [^ 1]:
 $ git config --global user.email "you@example.com"
 $ git config --global user.name "username"
-# Установите coreutils
+# Install coreutils
 $ pkg install coreutils
-```
+`` ``
 ## Using
-```
+`` ``
 $ python3 snoop.py --help
 
 usage: snoop.py [-h] [--donate y] [--version] [--verbose] [--base]
@@ -92,150 +73,126 @@ usage: snoop.py [-h] [--donate y] [--version] [--verbose] [--base]
                 [--update y]
                 USERNAMES [USERNAMES ...]
 
-Snoop: поиск никнейма по всем фронтам! (Version 1.2.1_rus Snoop Full)
+Snoop: nickname search on all fronts! (Version 1.2.1_rus Snoop Full)
 
 positional arguments:
-  USERNAMES             Никнейм разыскиваемого пользователя, поддерживается
-                        несколько имён
+  USERNAMES wanted user nickname, supported
+                        several names
 
 optional arguments:
-  -h, --help            show this help message and exit
-  --donate y, -d y      Пожертвовать на развитие Snoop Project-а
+  -h, --help show this help message and exit
+  --donate y, -d y Donate to the development of the Snoop Project
   --version, --about, -V
-                        НАЧАЛО! Вывод на печать версий: OS; Snoop;
-                        Python и Лицензии
-  --verbose, -v         Во время поиска 'username' выводить на печать
-                        подробную вербализацию
-  --base , -b           Указать для поиска 'username' другую БД (Локально)
-  --web-base, -w        Подключиться для поиска 'username' к обновляемой
-                        web_БД (Online)
-  --site , -s           Указать имя сайта из БД '--list all'. Поиск 'username'
-                        на одном указанном ресурсе
-  --time-out , -t 9     Установить выделение макс.времени на ожидание ответа
-                        от сервера (секунды). Влияет на продолжительность
-                        поиска. Влияет на 'Timeout ошибки:'Вкл. эту
-                        опцию необходимо практически всегда при медленном
-                        интернет соединении, чтобы избежать длительных
-                        зависаний при неполадках в сети (по умолчанию значение
-                        выставлено 9с)
-  --found-print, -f     Выводить на печать только найденные аккаунты
-  --no-func, -n         ✓Монохромный терминал, не использовать цвета в url
-                        ✓Отключить звук ✓Запретить открытие web browser-а
-                        ✓Отключить вывод на печать флагов стран ✓Отключить
-                        индикацию и статус прогресса
-  --userload , -u       Указать файл со списком user-ов. Пример, 'snoop -u
-                        ~/snoop/listusers.txt start'
-  --list all            Вывести на печать информацию о локальной базе данных
-                        Snoop
-  --country, -c         Сортировка 'вывода на печать/запись_результатов' по
-                        странам, а не по алфавиту
-  --save-report, -S     Сохранять найденные странички пользователей в
-                        локальные файлы
-  --update y            Обновить исходный код Snoop
-```
+                        START! Printing versions: OS; Snoop;
+                        Python and Licenses
+  --verbose, -v When searching for 'username' print
+                        verbalization in detail
+  --base, -b Indicate another database to search for 'username' (Local)
+  --web-base, -w Connect to search for 'username' to update
+                        web_db (Online)
+  --site, -s Specify the site name from the database '--list all'. Search 'username'
+                        on one specified resource
+  --time-out, -t 9 Set the allocation of max time to wait for a response
+                        from the server (seconds). Affects the duration
+                        search. Affects 'Timeout errors:' On this
+                        the option is almost always necessary when slow
+                        internet connection to avoid lengthy
+                        network freezes (default value
+                        9c set)
+  --found-print, -f Print only found accounts
+  --no-func, -n ✓ Monochrome terminal, do not use colors in url
+                        ✓ Mute. ✓ Prevent the opening of a web browser.
+                        ✓ Disable printing of country flags ✓ Disable
+                        indication and status of progress
+  --update y Update Snoop source code
+`` ``
 
-**Example**
-```
-# Для поиска только одного пользователя:
+** Example **
+`` ``
+# To search for only one user:
 $ python3 snoop.py username1
-# Или, например, кириллица поддерживается:
-$ python3 snoop.py олеся
-# Для поиска имени, содержащего пробел:
+# Or, for example, Cyrillic is supported:
+$ python3 snoop.py olesya
+# To search for a name containing a space:
 $ python3 snoop.py "ivan ivanov"
 $ python3 snoop.py ivan_ivanov
 $ python3 snoop.py ivan-ivanov
 
-# Запуск на OS Windows:
+# Launch on Windows OS:
 $ python snoop.py username1
 
-# Для поиска одного и более юзеров:
+# To search for one or more users:
 $ python3 snoop.py username1 username2 username3 username4
 
-# Поиск множества юзеров — сортировка вывода результатов по странам;
-# избежание зависаний на сайтах (чаще 'мёртвая зона' зависит от вашего ip-адреса);
-# выводить на печать только найденные аккаунты; сохранять странички найденных
-# аккаунтов локально; указать файл со списком разыскиваемых аккаунтов:
-$ python3 snoop.py -с -t 13 -f -S -u ~/file.txt start
+# Search for many users - sorting output by country;
+# Avoiding freezes on sites (more often the 'dead zone' depends on your ip-address);
+# print only found accounts; save pages found
+# accounts locally; specify a file with a list of wanted accounts:
+$ python3 snoop.py -c -t 13 -f -S -u ~ / file.txt start
 
-# 'ctrl-c/z' — прервать поиск
-```
-Найденные учетные записи будут храниться в ~/snoop/results/*/username.{txt.csv.html}.  
-Для доступа браузера к результатам поиска на платформе Android требуются рут права.  
-csv открывать в *office в кодировке utf-8, разделитель 'запятая'.  
+# 'ctrl-c / z' - abort the search
+`` ``
+The found accounts will be stored in ~ / snoop / results / * / username. {Txt.csv.html}.
+To access the browser to the search results on the Android platform, root rights are required.
+open csv in * office in utf-8 encoding, separator 'comma'.
 
-Уничтожить **все** результаты поиска — удалить каталог '~/snoop/results'.  
+Destroy ** all ** search results - delete the directory '~ / snoop / results'.
 
-```
-# Обновляйте Snoop для тестирования новых функций в ПО:
+`` ``
+#Update Snoop to test new features in the software:
 $ python3 snoop.py --update y
-[^1]: Требуется установка Git.
-```
+[^ 1]: Requires Git installation.
+`` ``
 
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
+## Major errors
 
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" />
+| Party | Problem | Solution |
+|: ---------: | -------------------------------------------------- ---- |: -------: |
+| ========= | ========================================= ================ | ======= |
+| Client | Connection Blocking by Proactive Defense (* Kaspersky) | 1 |
+| | Insufficient Internet connection speed EDGE / 3G | 2 |
+| | Too low value of option '-t' | 2 |
+| | invalid username | 3 |
+| | Errors: [GipsysTeam; RamblerDating; Mamochki] | 7 |
+| ========= | ========================================= ================ | ======= |
+| Provider | Internet Censorship | 4 |
+| ========= | ========================================= ================ | ======= |
+| Server | Site changed its response / API; updated CF / WAF | 5 |
+| | Server blocking the range of client IP addresses | 4 |
+| | Activation / protection of the resource captch | 4 |
+| | Some sites are temporarily unavailable, technical work | 6 |
+| ========= | ========================================= ================ | ======= |
 
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_run.png" />
+Solutions:
+1. Reconfigure your Firewall (for example, Kaspersky blocks Adult Resources).
 
-## Основные ошибки  
+2. Check the speed of your Internet connection:
+$ python3 snoop.py -v username
+If any of the network parameters is highlighted in red, Snoop may hang during the search.
+At low speed, increase the value of the 'x' option '--time-out x':
+$ python3 snoop.py -t 15 username
 
-|  Сторона  |                         Проблема                      | Решение |
-|:---------:| ------------------------------------------------------|:-------:|
-| ========= |=======================================================| ======= |
-| Клиент    |Блокировка соединения проактивной защитой (*Kaspersky) |    1    |
-|           |Недостаточная скорость интернет соединения EDGE / 3G   |    2    |
-|           |Слишком низкое значение опции '-t'                     |    2    |
-|           |недопустимое username                                  |    3    |
-|           |Ошибки: [GipsysTeam; RamblerDating; Mamochki]          |    7    |
-| ========= |=======================================================| ======= |
-| Провайдер |Internet Censorship                                    |    4    |
-| ========= |=======================================================| ======= |
-| Сервер    |Cайт изменил свой ответ/API; обновился CF/WAF          |    5    |
-|           |Блокировка сервером диапазона ip-адресов клиента       |    4    |
-|           |Срабатывание/защита ресурса captch-ей                  |    4    |
-|           |Некоторые сайты временно недоступны, технические работы|    6    |
-| ========= |=======================================================| ======= |
+3. In fact, this is not a mistake. Fix username
+(for example, on some sites Cyrillic characters are not allowed; "spaces"; or 'Vietnamese-Chinese_encoding'
+in user names, in order to save time: - requests are filtered).
 
-Решения:
-1. Перенастроить свой Firewall (например, Kaspersky блочит Ресурсы для взрослых).
+4. ** Change your ip address **
+(The "Gray" ip and censorship are the most common because of what you get skip / false positive errors / and in some cases '** Alas **'.
+For example, the most effective way to solve the problem is to use a VPN, Tor is not very suitable for this task.
+Rule: one scan from one ip is not enough to get the maximum return from Snoop).
 
-2. Проверить скорость своего интернет соединения:  
-$ python3 snoop.py -v username  
-Если какой-либо из параметров сети выделен красным цветом, Snoop может повиснуть во время поиска.  
-При низкой скорости увеличить значение 'x' опции '--time-out x':  
-$ python3 snoop.py -t 15 username  
+5. Open Snoop repositories on Github-e Issue / Pull request
+(inform the developer about this).
 
-3. Фактически это не ошибка. Исправить username  
-(например, на некоторых сайтах недопустимы символы кириллицы; "пробелы"; или 'вьетнамо-китайская_кодировка'  
-в именах пользователей, в целях экономии времени: — запросы фильтруются).
+6. Do not pay attention, sites sometimes go to repair work and return to duty.
 
-4. **Сменить свой ip-адрес**  
-("Серый" ip и цензура - самое частое из-за чего вы получаете ошибки пропуска/ложного срабатывания/и в некоторых случаях '**Увы**'.  
-Например, самый действенный способ решить проблему — использовать VPN, Tor не очень хорошо подходит для данной задачи.  
-Правило: одного сканирования с одного ip недостаточно для получения макимальной отдачи от Snoop).
-
-5. Открыть в Snoop репозитории на Github-e Issue/Pull request  
-(сообщить об этом разработчику).
-
-6. Не обращать внимание, сайты иногда уходят на ремонтные работы и возвращаются в строй.
-
-7. [Проблема](https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1 "проблема простая и решаемая") с некоторыми дистрибутивами GNU/Linux  
-Решение
-```
+7. [Problem] (https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1 "the problem is simple and solvable") with some GNU / Linux distributions
+Decision
+`` ``
 $ sudo nano /etc/ssl/openssl.cnf
 
-# Изменить в самом низу файла строки:
-[CipherString = DEFAULT@SECLEVEL=2]
-на
-[CipherString = DEFAULT@SECLEVEL=1]
-```
-
-**Отпечаток публичного ключа:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp key")
-
-**Лицензия Snoop Project:** https://github.com/snooppr/snoop/blob/master/COPYRIGHT
-
-[Документация](https://drive.google.com/open?id=12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih)
-
-**SNOOP PROJECT (OSINT) СУЩЕСТВУЕТ И РАЗВИВАЕТСЯ ТОЛЬКО НА GITHUB. НИ К TELEGRAM, НИ К WEB/ONLINE SNOOP НЕ ИМЕЕТ НИКАКОГО ОТНОШЕНИЯ.**
-
-**В СВЯЗИ СО СЛОЖИВШЕЙСЯ СИТУАЦИЕЙ В МИРЕ (САМОИЗОЛЯЦИЯ ГРАЖДАН ИЗ ЗА ЭПИДЕМИИ) СИЛЬНО ВЫРОСЛА НАГРУЗКА НА СЕТИ. SNOOP В ДАННЫЙ ПЕРИОД МОЖЕТ РАБОТАТЬ МЕДЛЕННО.**
+# Change at the very bottom of the line file:
+[CipherString = DEFAULT @ SECLEVEL = 2]
+on the
+[CipherString = DEFAULT @ SECLEVEL = 1]
+`` ``
